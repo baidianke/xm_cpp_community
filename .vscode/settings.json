@@ -3,5 +3,5 @@
     "source.fixAll.eslint": true
   },
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "SimonSiefke.prettier-vscode",
+  "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
 }

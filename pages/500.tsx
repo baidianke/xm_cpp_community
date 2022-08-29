@@ -1,10 +1,7 @@
-import type { NextPage } from 'next'
+import type { NextPage } from 'next';
 
 const ErrorPage: NextPage = () => {
-  return (
-    <div>500</div>
-  )
-}
+  return <div>500</div>;
+};
 
-
-export default ErrorPage
+export default ErrorPage;

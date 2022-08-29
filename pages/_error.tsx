@@ -11,27 +11,24 @@
  *  - https://reactjs.org/docs/error-boundaries.html
  */
 
- import * as Sentry from '@sentry/nextjs'
-import type { NextPageContext } from 'next'
-import NextErrorComponent from 'next/error'
-import type {ErrorProps} from 'next/error'
- 
- const CustomErrorComponent = (props: ErrorProps) => {
-  console.log(111111, props)
-  return  (
-    <NextErrorComponent statusCode={props.statusCode} />
-  )
- }
- 
- CustomErrorComponent.getInitialProps = async (contextData: NextPageContext) => {
-   // In case this is running in a serverless function, await this in order to give Sentry
-   // time to send the error before the lambda exits
-   console.log('error---', contextData)
-   await Sentry.captureUnderscoreErrorException(contextData)
- 
-   // This will contain the status code of the response
-   return NextErrorComponent.getInitialProps(contextData)
- }
- 
- export default CustomErrorComponent
- 
+import * as Sentry from '@sentry/nextjs';
+import type { NextPageContext } from 'next';
+import NextErrorComponent from 'next/error';
+import type { ErrorProps } from 'next/error';
+
+const CustomErrorComponent = (props: ErrorProps) => {
+  console.log(111111, props);
+  return <NextErrorComponent statusCode={props.statusCode} />;
+};
+
+CustomErrorComponent.getInitialProps = async (contextData: NextPageContext) => {
+  // In case this is running in a serverless function, await this in order to give Sentry
+  // time to send the error before the lambda exits
+  console.log('error---', contextData);
+  await Sentry.captureUnderscoreErrorException(contextData);
+
+  // This will contain the status code of the response
+  return NextErrorComponent.getInitialProps(contextData);
+};
+
+export default CustomErrorComponent;

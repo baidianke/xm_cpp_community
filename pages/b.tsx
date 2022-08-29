@@ -1,8 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '@/styles/Home.module.less'
-
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '@/styles/Home.module.less';
 
 const PageA: NextPage = () => {
   console.log('111111');

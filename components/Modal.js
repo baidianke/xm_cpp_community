@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import ClientOnlyPortal from './ClientOnlyPortal'
+import { useState } from 'react';
+import ClientOnlyPortal from './ClientOnlyPortal';
 
 export default function Modal() {
-  const [open, setOpen] = useState()
+  const [open, setOpen] = useState();
 
   return (
     <>
@@ -18,8 +18,7 @@ export default function Modal() {
                 <a
                   href="https://reactjs.org/docs/portals.html"
                   target="_blank"
-                  rel="noopener noreferrer"
-                >
+                  rel="noopener noreferrer">
                   portals
                 </a>
                 .
@@ -56,5 +55,5 @@ export default function Modal() {
         </ClientOnlyPortal>
       )}
     </>
-  )
+  );
 }

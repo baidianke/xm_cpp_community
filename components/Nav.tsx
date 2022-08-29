@@ -1,4 +1,4 @@
-import ActiveLink from './ActiveLink'
+import ActiveLink from './ActiveLink';
 
 const Nav = () => (
   <nav>
@@ -39,6 +39,6 @@ const Nav = () => (
       </li>
     </ul>
   </nav>
-)
+);
 
-export default Nav
+export default Nav;

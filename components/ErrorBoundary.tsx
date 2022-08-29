@@ -4,10 +4,10 @@ import type { ErrorInfo } from 'react';
 
 type Props = {
   children: React.ReactNode;
-}
+};
 type State = {
   hasError: boolean;
-}
+};
 class ErrorBoundary extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
@@ -15,10 +15,10 @@ class ErrorBoundary extends React.PureComponent<Props, State> {
   }
   static getDerivedStateFromError(error: Error) {
     console.log(error);
-    return { hasError: true }
+    return { hasError: true };
   }
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.log({ error, errorInfo })
+    console.log({ error, errorInfo });
     // Sentry.captureUnderscoreErrorException(errorInfo)
   }
   render() {
@@ -26,18 +26,15 @@ class ErrorBoundary extends React.PureComponent<Props, State> {
       return (
         <div>
           <h2>Oops, there is an error!</h2>
-          <button
-            type="button"
-            onClick={() => this.setState({ hasError: false })}
-          >
+          <button type="button" onClick={() => this.setState({ hasError: false })}>
             Try again?
           </button>
         </div>
-      )
+      );
     }
 
-    return this.props.children
+    return this.props.children;
   }
 }
 
-export default ErrorBoundary
+export default ErrorBoundary;

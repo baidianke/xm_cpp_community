@@ -1,4 +1,3 @@
-
 module.exports = {
   printWidth: 100,
   tabWidth: 2,
@@ -13,4 +12,4 @@ module.exports = {
   endOfLine: 'lf',
   bracketSameLine: true,
   jsxBracketSameLine: true,
-}
+};
