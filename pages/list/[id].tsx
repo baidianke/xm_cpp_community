@@ -1,9 +1,8 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '@/styles/Home.module.less';
 import { CounterContext } from '@/contexts/Counter';
 import { useContext } from 'react';
-import type { GetStaticProps, GetStaticPaths } from 'next';
+import type { GetStaticProps, GetStaticPaths, NextPage } from 'next';
 
 interface Props {
   data: string;
