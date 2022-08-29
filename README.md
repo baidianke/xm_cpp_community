@@ -1,11 +1,23 @@
 c++社区
 
-## Getting Started
+## 安装依赖
 
-First, run the development server:
+```
+yarn
+```
 
-```bash
-npm run dev
+## 配置 Git hooks：pre-commit
+
+```
+yarn run parpare
+```
+
+yarn
+
 # or
+
 yarn dev
+
+```
+
 ```

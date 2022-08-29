@@ -8,6 +8,12 @@ module.exports = {
     `yarn prettier --write ${filenames.join(' ')}`,
   ],
 
+  // Lint then format css and less files
+  '**/*.(less|css)': (filenames) => [
+    `yarn prettier --write ${filenames.join(' ')}`,
+    `yarn stylelint --fix ${filenames.join(' ')}`,
+  ],
+
   // Format MarkDown and JSON
   '**/*.(md|json)': (filenames) => `yarn prettier --write ${filenames.join(' ')}`,
 };
