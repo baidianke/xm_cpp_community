@@ -8,7 +8,7 @@ import { useContext } from 'react';
 const PageA: NextPage = () => {
 
   const counter = useContext(CounterContext);
-
+  console.log("111111");
   return (
     <div className={styles.container}>
       <Head>
