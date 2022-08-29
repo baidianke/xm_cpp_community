@@ -1,0 +1,8 @@
+.next/
+node_modules
+.idea/
+dist/
+static/
+next.config.js
+routes.js
+ecosystem.config.js

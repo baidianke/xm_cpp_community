@@ -1,14 +1,12 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '@/styles/Home.module.less';
-import { CounterContext } from '@/contexts/Counter';
-import { useContext } from 'react';
+import type { NextPage } from 'next'
+import Head from 'next/head'
+import Image from 'next/image'
+import styles from '@/styles/Home.module.less'
+
 
 const PageA: NextPage = () => {
-  const counter = useContext(CounterContext);
-  console.log("111111");
-  let a = { a: 1, b: '2', c: '3' };
+  console.log('111111');
+  console.log('123');
   return (
     <div className={styles.container}>
       <Head>
@@ -18,6 +16,7 @@ const PageA: NextPage = () => {
       <Image
         src="https://xmcdn.oss-cn-shanghai.aliyuncs.com/double_teach_resource/audioPlay.png"
         width={200}
+        alt="111"
         height={200}></Image>
     </div>
   );

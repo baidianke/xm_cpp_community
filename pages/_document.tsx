@@ -4,11 +4,11 @@ export default function Document() {
   return (
     <Html lang="zh-CN">
       <Head>
-        <title>小码王c++社区</title>
+        {/* <title>小码王c++社区</title> */}
         <meta charSet="utf-8" />
         <meta name="robots" content="follow, index" />
-        <meta name="keywords" content="keywords1, keywords2, keywords3"/>
-        <meta name="description" content="description"/>
+        <meta name="keywords" content="keywords1, keywords2, keywords3" />
+        <meta name="description" content="description" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <link rel="manifest" href="/manifest.json" />

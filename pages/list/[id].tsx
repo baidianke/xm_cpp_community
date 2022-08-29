@@ -1,19 +1,18 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '@/styles/Home.module.less';
 import { CounterContext } from '@/contexts/Counter';
 import { useContext } from 'react';
-import type { GetStaticProps,  GetStaticPaths} from 'next';
+import type { GetStaticProps, GetStaticPaths } from 'next';
 
 interface Props {
   data: string
 }
 
-const PageA: NextPage<Props> = ({data}) => {
+const PageA: NextPage<Props> = ({ data }) => {
 
   const counter = useContext(CounterContext);
-  console.log(1111, data);
+  console.log("1111-------", data);
   return (
     <div className={styles.container}>
       <Head>

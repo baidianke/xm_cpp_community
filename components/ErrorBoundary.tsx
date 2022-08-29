@@ -1,6 +1,6 @@
 import React from 'react';
 import type { ErrorInfo } from 'react';
-import * as Sentry from '@sentry/nextjs'
+// import * as Sentry from '@sentry/nextjs'
 
 type Props = {
   children: React.ReactNode;
