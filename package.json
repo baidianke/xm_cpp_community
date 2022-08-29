@@ -54,24 +54,5 @@
     "not ie 11",
     "not dead",
     "not op_mini all"
-  ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "**/*.{json,md,js,jsx,ts,tsx,css,less}": [
-      "prettier --write",
-      "git add"
-    ],
-    "**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "**/*.{css,less}": [
-      "stylelint --fix",
-      "git add"
-    ]
-  }
+  ]
 }
