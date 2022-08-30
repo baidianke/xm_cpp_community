@@ -5,7 +5,7 @@
   "scripts": {
     "prepare": "husky install",
     "dev": "cross-env NODE_ENV=development XM=dev next dev",
-    "local:test": "cross-env NODE_ENV=development XM=test next dev",
+    "dev:test": "cross-env NODE_ENV=development XM=test next dev",
     "build:dev": "cross-env NODE_ENV=production XM=dev next build",
     "build:test": "cross-env NODE_ENV=production XM=test next build",
     "build:test3": "cross-env NODE_ENV=production XM=test3 next build",
