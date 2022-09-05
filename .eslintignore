@@ -5,3 +5,4 @@ dist/
 static/
 next.config.js
 ecosystem.config.js
+public/

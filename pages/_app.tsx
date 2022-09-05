@@ -1,43 +1,22 @@
-import type { AppProps } from 'next/app';
 import ErrorBoundary from '@/components/ErrorBoundary';
-import '@/styles/globals.css';
-import NProgress from 'nprogress';
-import 'nprogress/nprogress.css';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import CounterProvider from '@/contexts/Counter';
-import Nav from '@/components/Nav';
+import useNgProceess from '@/hooks/useNgProcess';
+import UserProvider from '@/contexts/UserProvider';
+import Layout from '@/components/Layout';
+import '@/styles/globals.less';
+// import 'antd/lib/message/style/css'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
+function MyApp({ Component, pageProps }: AppPropsWithCustomConfig) {
+  console.log('app needSign----', Component.needSign);
 
-  useEffect(() => {
-    const handleStart = (url: string) => {
-      console.log(`Loading: ${url}`);
-      NProgress.start();
-    };
-
-    const handleStop = () => {
-      NProgress.done();
-    };
-
-    router.events.on('routeChangeStart', handleStart);
-    router.events.on('routeChangeComplete', handleStop);
-    router.events.on('routeChangeError', handleStop);
-
-    return () => {
-      router.events.off('routeChangeStart', handleStart);
-      router.events.off('routeChangeComplete', handleStop);
-      router.events.off('routeChangeError', handleStop);
-    };
-  }, [router]);
+  useNgProceess();
 
   return (
     <ErrorBoundary>
-      <CounterProvider>
-        <Nav />
-        <Component {...pageProps} />
-      </CounterProvider>
+      <UserProvider needSign={!!Component.needSign}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </UserProvider>
     </ErrorBoundary>
   );
 }

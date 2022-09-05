@@ -13,11 +13,6 @@ const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = withBundleAnalyzer(
   withLess({
     lessLoaderOptions: {
-      // 修改antd样式
-      // modifyVars: {
-      //   "primary-color": "#9900FF",
-      //   "border-radius-base": "2px",
-      // },
       additionalData: (content) =>
         `${content}\n\n@import '${path.resolve('styles/variables.less')}';`,
     },
@@ -25,6 +20,7 @@ const nextConfig = withBundleAnalyzer(
     swcMinify: true,
     distDir: 'dist',
     env: {
+      XM: process.env.XM,
       XM_ENV: xmEnv[process.env.XM],
     },
     assetPrefix: isProd
@@ -36,6 +32,22 @@ const nextConfig = withBundleAnalyzer(
     sentry: {
       disableServerWebpackPlugin: true,
       disableClientWebpackPlugin: true,
+    },
+    poweredByHeader: false,
+    typescript: {
+      ignoreBuildErrors: false,
+    },
+    eslint: {
+      ignoreDuringBuilds: false,
+    },
+    async redirects() {
+      return [
+        {
+          source: '/',
+          destination: '/problemset',
+          permanent: true,
+        },
+      ];
     },
   })
 );

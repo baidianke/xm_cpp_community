@@ -1,0 +1,15 @@
+// next/babel： https://github.com/vercel/next.js/blob/canary/packages/next/build/babel/preset.ts
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    //
+    // [
+    //   "import",
+    //   {
+    //     "libraryName": "antd",
+    //     "libraryDirectory": "lib"
+    //     // "style": true
+    //   }
+    // ]
+  ]
+}

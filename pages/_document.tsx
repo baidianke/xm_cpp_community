@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html lang="zh-CN">
       <Head>
-        {/* <title>小码王c++社区</title> */}
         <meta charSet="utf-8" />
         <meta name="robots" content="follow, index" />
         <meta name="keywords" content="keywords1, keywords2, keywords3" />
@@ -17,6 +16,7 @@ export default function Document() {
         <link href="/icons/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
         <meta name="theme-color" content="#317EFB" />
+        <link rel="stylesheet" href="/fonts/iconfont.css" />
       </Head>
       <body>
         <Main />

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import { NextPage } from 'next';
 
 const ErrorPage: NextPage = () => {
   return <div>500</div>;

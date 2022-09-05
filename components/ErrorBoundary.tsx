@@ -1,13 +1,12 @@
-import React from 'react';
-import type { ErrorInfo } from 'react';
+import React, { ErrorInfo } from 'react';
 // import * as Sentry from '@sentry/nextjs'
 
-type Props = {
+interface Props {
   children: React.ReactNode;
-};
-type State = {
+}
+interface State {
   hasError: boolean;
-};
+}
 class ErrorBoundary extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);

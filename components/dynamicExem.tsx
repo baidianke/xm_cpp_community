@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
-const DynamicHeader = dynamic(() => import('./layout'), {
+const DynamicHeader = dynamic(() => import('./Layout'), {
   suspense: true,
   ssr: false, // 禁止在服务端渲染，window。。。
 });

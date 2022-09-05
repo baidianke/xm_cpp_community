@@ -5,7 +5,7 @@ declare module '*.less' {
 
 declare namespace NodeJS {
   interface ProcessEnv {
-    XM: 'dev' | 'test' | 'prod';
+    XM: 'dev' | 'test' | 'gray' | 'prod';
     XM_ENV: {
       PORT: string;
       APP_NAME: string;
@@ -18,3 +18,54 @@ declare namespace NodeJS {
     };
   }
 }
+
+declare namespace XM_SSO {
+  interface XM_SSO_USER {
+    accessToken: string;
+    userId: number;
+    avatarImg: string;
+    nickname: string;
+    phone: string;
+  }
+
+  interface XM_SSO_SDK_CONFIG {
+    onLoginSuccess: (user: XM_SSO_USER) => void;
+    doTrack: (name: string) => void;
+    xmAppId: string;
+    wxAppId?: string;
+    regProtocolUrl?: string;
+    skipPwdSet?: boolean;
+    loginSuccessCallback: string;
+    wechatBindType?: 'normal' | 'bubble';
+    phoneInputPlaceholder?: string;
+    loginByPhonePlaceholder?: string;
+    isShowWeiXinLogin?: boolean;
+    isBubble?: boolean;
+    loginMethods?: 'password' | 'sms' | 'exam' | 'quicklogin' | 'teacher' | string;
+  }
+
+  interface XM_SSO_SDK {
+    openLoginDialog: () => void;
+    openRegDialog: () => void;
+    openResetDialog: () => void;
+    config: (options: XM_SSO_SDK_CONFIG) => void;
+    getCurrentUser: () => Promise<XM_SSO_USER>;
+    getCurrentUserToken: () => Promise<string>;
+    doLogOut: () => void;
+    loginByWechat: () => void;
+  }
+}
+
+declare interface Window {
+  XM_SSO_SDK: XM_SSO.XM_SSO_SDK;
+}
+
+/* eslint-disable */
+declare type NextPageWithCustomConfig<P = {}, IP = P> = NextPage<P, IP> & {
+  needSign: boolean;
+};
+/* eslint-enable */
+
+declare type AppPropsWithCustomConfig = AppProps & {
+  Component: NextPageWithCustomConfig;
+};
